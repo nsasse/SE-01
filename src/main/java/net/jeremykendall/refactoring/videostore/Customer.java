@@ -19,7 +19,7 @@ public class Customer {
 
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(each.amountFor()) + "\n";
+                    String.valueOf(each.getCharge()) + "\n";
         }
         //add footer lines
         result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
@@ -52,7 +52,7 @@ public class Customer {
         Enumeration rentals = _rentals.elements();
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            result += each.amountFor();
+            result += each.getCharge();
         }
         return result;
     }
